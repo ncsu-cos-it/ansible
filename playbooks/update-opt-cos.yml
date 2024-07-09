@@ -1,0 +1,116 @@
+- name: Update /opt/cos
+  hosts: all
+  become: true
+  tasks:  
+  - name: Git Clone to /opt/cos (MacOSX)
+    git:
+      repo: https://github.com/ncsu-cos-it/mac.git
+      dest: /opt/cos
+      update: yes
+      force: yes
+    when: ansible_distribution == "MacOSX"
+
+  - name: Modify /opt/cos Permissions (MacOSX)
+    file: 
+      dest: /opt/cos
+      owner: root
+      group: 108
+      mode: 0755
+      recurse: yes
+    when: ansible_distribution == "MacOSX"
+
+  - name: Modify /opt/cos/etc Permissions (MacOSX)
+    file: 
+      dest: /opt/cos/etc
+      owner: root
+      group: 108
+      mode: 0775
+      recurse: yes
+    when: ansible_distribution == "MacOSX"
+
+  - name: Find all files in /opt/cos/bin (MacOSX)
+    find: 
+      paths: /opt/cos/bin
+    register: find
+    when: ansible_distribution == "MacOSX"
+
+  - name: Create symlinks to /usr/local/bin (MacOSX)
+    become: True
+    file: 
+      src: "{{ item.path }}"
+      path: "/usr/local/bin/{{ item.path | basename }}"
+      state: link
+    with_items: "{{ find.files }}"
+    when: ansible_distribution == "MacOSX"
+    
+  - name: Find all files in /opt/cos/sbin (MacOSX)
+    find: 
+      paths: /opt/cos/sbin
+    register: find
+    when: ansible_distribution == "MacOSX"
+
+  - name: Create symlinks to /usr/local/sbin (MacOSX)
+    become: True
+    file: 
+      src: "{{ item.path }}"
+      path: "/usr/local/sbin/{{ item.path | basename }}"
+      state: link
+    with_items: "{{ find.files }}"
+    when: ansible_distribution == "MacOSX"
+    
+  - name: Git Clone to /opt/cos (Ubuntu)
+    git:
+      repo: https://github.com/ncsu-cos-it/mac.git
+      dest: /opt/cos
+      update: yes
+      force: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Modify /opt/cos Permissions (Ubuntu)
+    file: 
+      dest: /opt/cos
+      owner: root
+      group: 108
+      mode: 0755
+      recurse: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Modify /opt/cos/etc Permissions (Ubuntu)
+    file: 
+      dest: /opt/cos/etc
+      owner: root
+      group: 108
+      mode: 0775
+      recurse: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Find all files in /opt/cos/bin (Ubuntu)
+    find: 
+      paths: /opt/cos/bin
+    register: find
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Create symlinks to /usr/local/bin (Ubuntu)
+    become: True
+    file: 
+      src: "{{ item.path }}"
+      path: "/usr/local/bin/{{ item.path | basename }}"
+      state: link
+    with_items: "{{ find.files }}"
+    when: ansible_distribution == "Ubuntu"
+    
+  - name: Find all files in /opt/cos/sbin (Ubuntu)
+    find: 
+      paths: /opt/cos/sbin
+    register: find
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Create symlinks to /usr/local/sbin (Ubuntu)
+    become: True
+    file: 
+      src: "{{ item.path }}"
+      path: "/usr/local/sbin/{{ item.path | basename }}"
+      state: link
+    with_items: "{{ find.files }}"
+    when: ansible_distribution == "Ubuntu"
+    

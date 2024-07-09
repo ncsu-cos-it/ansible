@@ -1,0 +1,17 @@
+[stat_servers]
+geek ansible_host=10.72.2.34
+st-gpu01 ansible_host=10.72.3.231
+
+[stat_linux_desktops]
+osborne-lnx ansible_host=10.72.3.176
+booth-lnx ansible_host=10.72.3.107
+davidian-lnx ansible_host=10.72.3.177
+tang-lnx ansible_host=10.72.3.178
+
+[stat_mac_desktops]
+# sysadmin-mac ansible_host=10.72.3.80
+staicu-mac ansible_host=10.72.3.117
+xiao-mac ansible_host=10.72.3.140
+
+[myhosts]
+sysadmin-mac ansible_host=10.72.3.80 ansible_=cosadm ansible_ssh_private_key=/Users/cosadm/.ssh/id_rsa
