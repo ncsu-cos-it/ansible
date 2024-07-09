@@ -1,4 +1,4 @@
-* sudo ln -s '`pwd`'/ansible /etc/ansible
+* sudo ln -s \`pwd\`/ansible /etc/ansible
 * ls -al /etc/ansible
 * cd ~/.ssh
 * mkdir cosadm
