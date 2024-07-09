@@ -13,3 +13,4 @@
   <pre> profile::auth::sudoers:
         - cosadm:
           - 'ALL@NOPASSWD: ALL'</pre>
+* Mac machines need to run <pre>/opt/cos/sbin/modify-sudo</pre>
