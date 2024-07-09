@@ -9,7 +9,7 @@
 * rmdir .ssh
 * rm ~/Downloads/ssh-keys.tar
 * sudo chown $USER:$GROUP *
-* Linux machines need to have:
+* Linux machines need to have puppet config:
   <pre> profile::auth::sudoers:
         - cosadm:
           - 'ALL@NOPASSWD: ALL'</pre>
