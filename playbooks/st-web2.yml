@@ -1,0 +1,65 @@
+- name: Update /opt/cos
+  hosts: st-web2
+  become: true
+  tasks:
+
+  - name: Install a list of packages
+    apt:
+       pkg:
+       - vim
+       - git
+       - nano
+       - net-tools
+       - tcsh
+       - zsh
+       - gawk
+       - rdate
+       - screen
+       - tmux
+       - curl
+       - whois
+       - cifs-utils
+       - mariadb-server
+       - apache2
+       - php
+       - webalizer
+       - software-properties-common
+       - apt-transport-https
+       - libapache2-mod-perl2
+       - libapache2-db-perl
+       - build-essential
+       - php-mysql
+       - php-gd
+       - php-xml
+       - php-mbstring
+       - php-curl
+       - php-zip
+       - php-intl
+       - php-imagick
+       - php8.3-sqlite3
+       - libxml-simple-perl
+       - libdbd-mysql-perl
+       - libapache-dbi-perl
+       - libnet-ip-perl
+       - php-pclzip
+       - libarchive-zip-perl 
+       - libxml-simple-perl 
+       - libnet-ip-perl 
+       - libapache-dbi-perl 
+       - libdbi-perl
+       - libmojolicious-perl
+       - libswitch-perl
+       - libplack-perl
+       - shibboleth-sp-common
+       - shibboleth-sp-utils
+       state: present
+       update_cache: yes
+
+  - name: Remove useless packages from the cache
+    apt:
+      autoclean: yes
+
+  - name: Remove dependencies that are no longer required
+    apt:
+      autoremove: yes
+

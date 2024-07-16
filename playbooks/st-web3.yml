@@ -1,0 +1,71 @@
+- name: Update /opt/cos
+  hosts: st-web3
+  become: true
+  tasks:
+
+  - name: Install a list of packages
+    apt:
+       pkg:
+       - vim
+       - git
+       - nano
+       - net-tools
+       - tcsh
+       - zsh
+       - gawk
+       - rdate
+       - screen
+       - tmux
+       - curl
+       - whois
+       - cifs-utils
+       - apache2
+       - php
+       - webalizer
+       - software-properties-common
+       - apt-transport-https
+       - build-essential
+       - snap
+       - dirmngr
+       - gdebi-core
+       - lib32gcc-s1 
+       - lib32stdc++6 
+       - libc6-i386 
+       - libclang-18-dev 
+       - libclang-common-18-dev 
+       - libclang-dev 
+       - libclang-rt-18-dev 
+       - libdbi1t64 
+       - libgc1 
+       - libobjc-13-dev 
+       - libobjc4 
+       - libpq5 
+       - librrd8t64 
+       - libssl-dev 
+       - rrdtool
+       - texlive
+       - libxml2-dev
+       - libfontconfig1-dev
+       - libcurl4-openssl-dev
+       - libharfbuzz-dev
+       - libharfbuzz-dev
+       - libfribidi-dev
+       - libfreetype6-dev 
+       - libpng-dev 
+       - libtiff5-dev 
+       - libjpeg-dev
+       - sqlite3
+       - libsqlite3-dev
+       - gnupg
+       - autofs
+       state: present
+       update_cache: yes
+
+  - name: Remove useless packages from the cache
+    apt:
+      autoclean: yes
+
+  - name: Remove dependencies that are no longer required
+    apt:
+      autoremove: yes
+

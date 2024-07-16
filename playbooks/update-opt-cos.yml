@@ -60,7 +60,7 @@
     
   - name: Git Clone to /opt/cos (Ubuntu)
     git:
-      repo: https://github.com/ncsu-cos-it/mac.git
+      repo: https://github.com/ncsu-cos-it/lnx.git
       dest: /opt/cos
       update: yes
       force: yes
