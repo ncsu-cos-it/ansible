@@ -1,4 +1,4 @@
-- name: Update /opt/cos
+- name: Configure st-web3 (Ubuntu 24.04)
   hosts: st-web3
   become: true
   tasks:

@@ -3,6 +3,7 @@ geek ansible_host=10.72.2.34
 st-gpu01 ansible_host=10.72.3.231
 st-web2 ansible_host=152.1.228.34
 st-web3 ansible_host=152.1.118.182
+st-web4 ansible_host=152.1.228.35
 st-web5 ansible_host=152.1.118.183
 
 [stat_linux_desktops]
