@@ -56,8 +56,11 @@
        - libjpeg-dev
        - sqlite3
        - libsqlite3-dev
+       - libssl-dev 
+       - libsasl2-dev
        - gnupg
        - autofs
+       - gparted
        state: present
        update_cache: yes
 
