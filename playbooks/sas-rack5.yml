@@ -1,0 +1,9 @@
+- name: Shutdown Rack 5
+  hosts: st-web2
+  gather_facts: no
+  become: true
+
+  tasks:
+    - name: shutdown
+      command: /sbin/shutdown -h now
+      sudo: yes
