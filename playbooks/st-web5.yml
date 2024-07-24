@@ -57,6 +57,7 @@
        - libsodium-dev
        - gdal-bin 
        - libgdal-dev
+       - libudunits2-dev
        state: present
        update_cache: yes
 
