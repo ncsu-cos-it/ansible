@@ -58,6 +58,7 @@
        - gdal-bin 
        - libgdal-dev
        - libudunits2-dev
+       - cmake
        state: present
        update_cache: yes
 
