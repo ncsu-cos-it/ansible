@@ -5,6 +5,8 @@ st-web2 ansible_host=152.1.228.34
 st-web3 ansible_host=152.1.118.182
 st-web4 ansible_host=152.1.228.35
 st-web5 ansible_host=152.1.118.183
+st-hpc2 ansible_host=10.72.2.74
+cos-web1 ansible_host=152.1.118.184
 
 [stat_linux_desktops]
 osborne-lnx ansible_host=10.72.3.176

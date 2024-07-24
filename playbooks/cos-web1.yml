@@ -1,5 +1,5 @@
-- name: Configure st-web5 (Ubuntu 22.04)
-  hosts: st-web5
+- name: Configure cos-web1 (Ubuntu 24.04)
+  hosts: cos-web1
   become: true
   tasks:
 
@@ -28,35 +28,8 @@
        - snap
        - dirmngr
        - gdebi-core
-       - lib32gcc-s1 
-       - lib32stdc++6 
-       - libc6-i386 
-       - libclang-dev 
-       - libgc1 
-       - libobjc4 
-       - libpq5 
-       - libssl-dev 
-       - rrdtool
-       - texlive
-       - libxml2-dev
-       - libfontconfig1-dev
-       - libcurl4-openssl-dev
-       - libharfbuzz-dev
-       - libharfbuzz-dev
-       - libfribidi-dev
-       - libfreetype6-dev 
-       - libpng-dev 
-       - libtiff5-dev 
-       - libjpeg-dev
-       - sqlite3
-       - libsqlite3-dev
-       - gnupg
        - autofs
-       - media-types
-       - jq
-       - libsodium-dev
-       - gdal-bin 
-       - libgdal-dev
+       - gparted
        state: present
        update_cache: yes
 

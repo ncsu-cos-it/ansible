@@ -1,0 +1,40 @@
+- name: Configure st-hpc2 (Ubuntu 24.04)
+  hosts: st-hpc2
+  become: true
+  tasks:
+
+  - name: Install a list of packages
+    apt:
+       pkg:
+       - vim
+       - git
+       - nano
+       - net-tools
+       - tcsh
+       - zsh
+       - gawk
+       - rdate
+       - screen
+       - tmux
+       - curl
+       - whois
+       - software-properties-common
+       - build-essential
+       - snap
+       - dirmngr
+       - gdebi-core
+       - texlive
+       - gnupg
+       - autofs
+       - gparted
+       state: present
+       update_cache: yes
+
+  - name: Remove useless packages from the cache
+    apt:
+      autoclean: yes
+
+  - name: Remove dependencies that are no longer required
+    apt:
+      autoremove: yes
+
