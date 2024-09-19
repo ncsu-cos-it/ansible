@@ -1,4 +1,4 @@
-- name: Configure st-web3 (Ubuntu 24.04)
+- name: Configure st-web4 (Ubuntu 24.04)
   hosts: st-web4
   become: true
   tasks:
@@ -28,39 +28,51 @@
        - snap
        - dirmngr
        - gdebi-core
-       - lib32gcc-s1 
-       - lib32stdc++6 
-       - libc6-i386 
-       - libclang-18-dev 
-       - libclang-common-18-dev 
-       - libclang-dev 
-       - libclang-rt-18-dev 
-       - libdbi1t64 
-       - libgc1 
-       - libobjc-13-dev 
-       - libobjc4 
-       - libpq5 
-       - librrd8t64 
-       - libssl-dev 
+       - lib32gcc-s1
+       - lib32stdc++6
+       - libc6-i386
+       - libclang-18-dev
+       - libclang-common-18-dev
+       - libclang-dev
+       - libclang-rt-18-dev
+       - libdbi1t64
+       - libgc1
+       - libobjc-13-dev
+       - libobjc4
+       - libpq5
+       - librrd8t64
+       - libssl-dev
        - rrdtool
        - texlive
        - libxml2-dev
        - libfontconfig1-dev
        - libcurl4-openssl-dev
        - libharfbuzz-dev
-       - libharfbuzz-dev
        - libfribidi-dev
-       - libfreetype6-dev 
-       - libpng-dev 
-       - libtiff5-dev 
+       - libfreetype6-dev
+       - libpng-dev
+       - libtiff5-dev
        - libjpeg-dev
        - sqlite3
        - libsqlite3-dev
-       - libssl-dev 
+       - libssl-dev
        - libsasl2-dev
        - gnupg
        - autofs
        - gparted
+       - media-types
+       - jq
+       - libsodium-dev
+       - gdal-bin
+       - libgdal-dev
+       - libudunits2-dev
+       - cmake
+       - libssl-dev
+       - libsasl2-dev
+       - libudunits2-dev
+       - libmagick++-dev
+       - cargo
+       - libjq-dev
        state: present
        update_cache: yes
 

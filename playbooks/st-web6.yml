@@ -1,5 +1,5 @@
-- name: Configure st-web5 (Ubuntu 22.04)
-  hosts: st-web5
+- name: Configure st-web6 (Ubuntu 22.04)
+  hosts: st-web6
   become: true
   tasks:
 
