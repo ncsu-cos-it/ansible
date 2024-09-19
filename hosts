@@ -1,5 +1,4 @@
 [stat_servers]
-adsfa
 st-rsync ansible_host=10.72.2.34 
 st-gpu01 ansible_host=10.72.3.231
 st-web1  ansible_host=152.1.118.178
